@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to our E-Commerce Platform! This project is a fully-featured e-commerce application built with [Your Tech Stack]. It allows users to browse products, add them to the cart, and complete purchases.
+Welcome to our E-Commerce Platform! This project is a fully-featured e-commerce application built with Django and DRF. It allows users to browse products, add them to the cart, and complete purchases.
 
 ## Features
 
@@ -24,4 +24,4 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/e-commerce-platform.git
+   git clone https://github.com/khan215701/smartshop.git
