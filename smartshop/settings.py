@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     'backend',
+    'backend.user',
 ]
 
 # Third-party Apps
@@ -83,6 +84,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'smartshop.wsgi.application'
+
+AUTH_USER_MODEL = 'backend_user.User'
 
 
 # Database
