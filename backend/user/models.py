@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 # Create your models here.
@@ -38,7 +38,9 @@ class UserManager(BaseUserManager):
             **kwargs
         )
         user.set_password(password)
-        user.save(using=self.db)
+        user.save(using=self._db)
+
+        return user
 
     def create_superuser(self, first_name, last_name, username, email, password=None, **kwargs):
         self.check_validations(username, email, password)
@@ -49,24 +51,24 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
             password=password)
         user.is_admin = True
-        user.is_active = True
-        user.is_superuser = True
         user.is_staff = True
-        user.save(using=self.db)
+        user.is_superuser = True
+        user.is_active = True
+        user.save(using=self._db)
 
         return user
 
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    username = models.CharField(max_length=50, unique=True)
+    username = models.CharField(db_index=True, max_length=50, unique=True)
     email = models.EmailField(max_length=50, unique=True)
     phone_number = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
 
