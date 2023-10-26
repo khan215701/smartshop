@@ -1,6 +1,7 @@
 from django.contrib import admin
 from backend.user.models import User
 from backend.category.models import Category
+from backend.store.models import Product
 # Register your models here.
 
 
@@ -22,3 +23,10 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ('created', 'updated')
     list_per_page = 10
     search_fields = ('category_name',)
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('product_name',)}
+    list_display = ('product_name', 'price', 'stock',
+                    'category', 'created', 'updated')

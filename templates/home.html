@@ -1,7 +1,7 @@
-{% include  'includes/base.html' %}
+{% extends  'includes/base.html' %}
 {% load static %}
-  <body>
-   {% include 'includes/header.html' %}
+{% block content %}
+ 
     <!-- section-header.// -->
 
     <!-- ========================= SECTION MAIN ========================= -->
@@ -25,32 +25,32 @@
           <h3 class="section-title">Popular products</h3>
         </header>
         <!-- sect-heading -->
-
+       
         <div class="row"> 
+          {% for product in products %}
           <div class="col-md-3">
             <div class="card card-product-grid">
               <a href="./product-detail.html" class="img-wrap">
-                <img src={% static "images/banners/1.jpg" %} />
+                <img src={{product.images.url}} />
               </a>
               <figcaption class="info-wrap">
                 <a href="./product-detail.html" class="title"
-                  >Just another product name</a
+                  >{{product.product_name}}</a
                 >
-                <div class="price mt-1">$179.00</div>
+                <div class="price mt-1">${{product.price}}</div>
                 <!-- price-wrap.// -->
               </figcaption>
             </div>
           </div>
           <!-- col.// -->
+          {% endfor %}
         </div>
         <!-- row.// -->
       </div>
       <!-- container // -->
     </section>
     <!-- ========================= SECTION  END// ========================= -->
-
-    <!-- ========================= FOOTER ========================= -->
-    {% include 'includes/footer.html' %}
-    <!-- ========================= FOOTER END // ========================= -->
   </body>
 </html>
+
+{% endblock %}

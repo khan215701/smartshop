@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7e28cd723801014bbce4599f43990812610c59cde14fcaa2004848bd8b85d8a3"
+            "sha256": "01890939db04af38e4e736e6a7621aa2a03b7660ed665fd086a272dfa1cb52a2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,6 +31,14 @@
             ],
             "index": "pypi",
             "version": "==4.2.6"
+        },
+        "djangorestframework": {
+            "hashes": [
+                "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8",
+                "sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08"
+            ],
+            "index": "pypi",
+            "version": "==3.14.0"
         },
         "pillow": {
             "hashes": [
@@ -166,6 +174,21 @@
             ],
             "index": "pypi",
             "version": "==2.9.9"
+        },
+        "pytz": {
+            "hashes": [
+                "sha256:7b4fddbeb94a1eba4b557da24f19fdf9db575192544270a9101d8509f9f43d7b",
+                "sha256:ce42d816b81b68506614c11e8937d3aa9e41007ceb50bfdcb0749b921bf646c7"
+            ],
+            "version": "==2023.3.post1"
+        },
+        "router": {
+            "hashes": [
+                "sha256:4ca308adec8b57bb4021a4ffd0d517e5ddd495c19f0a3e96b95b08a3fe87b88e",
+                "sha256:f3792acda2d801a2b218e875b5dc0a72744cce32ed60ce90403074f97a5bb3af"
+            ],
+            "index": "pypi",
+            "version": "==0.1"
         },
         "sqlparse": {
             "hashes": [
