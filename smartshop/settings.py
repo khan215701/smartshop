@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'backend',
     'backend.user',
+    'backend.category',
 ]
 
 # Third-party Apps
