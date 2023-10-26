@@ -55,7 +55,7 @@ INSTALLED_APPS += [
 # You can include third-party apps by specifying their names here.
 
 INSTALLED_APPS += [
-
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
