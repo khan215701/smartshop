@@ -5,7 +5,7 @@ from rest_framework.routers import SimpleRouter
 from .views import HomeViewSet
 
 router = SimpleRouter()
-router.register('products', HomeViewSet)
+router.register('api/home', HomeViewSet)
 
 urlpatterns = [
     path(
